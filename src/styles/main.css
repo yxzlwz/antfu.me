@@ -225,3 +225,7 @@ html:not(.dark) [img-dark] {
 .fade-leave-to {
   opacity: 0;
 }
+
+.giscus {
+    margin-top: 3em !important;
+}

@@ -1,4 +1,7 @@
 <script setup lang='ts'>
+import Giscus from '@giscus/vue';
+import { isDark } from '~/logics'
+
 import { formatDate } from '~/logics'
 
 const { frontmatter } = defineProps({
@@ -131,6 +134,23 @@ const ArtComponent = computed(() => {
   <article ref="content" :class="[frontmatter.tocAlwaysOn ? 'toc-always-on' : '', frontmatter.class]">
     <slot />
   </article>
+  <div class="prose m-auto mb-8 giscus">
+    <Giscus
+      id="comments"
+      repo="yxzlwz/blog"
+      repoId="R_kgDOJq1RYg"
+      category="Announcements"
+      categoryId="DIC_kwDOJq1RYs4CW7t8"
+      mapping="specific"
+      term="Welcome to @giscus/react component!"
+      reactionsEnabled="1"
+      emitMetadata="0"
+      inputPosition="top"
+      :theme="isDark ? 'dark' : 'light'"
+      lang="en"
+      loading="lazy"
+    />
+  </div>
   <div v-if="route.path !== '/'" class="prose m-auto mt-8 mb-8 slide-enter animate-delay-500 print:hidden">
     <template v-if="frontmatter.duration">
       <span font-mono op50>> </span>

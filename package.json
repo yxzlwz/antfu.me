@@ -12,6 +12,7 @@
     "compress": "esno scripts/img-compress-staged.ts"
   },
   "dependencies": {
+    "@giscus/vue": "^3.0.0",
     "@vueuse/core": "^10.9.0",
     "dayjs": "^1.11.10",
     "floating-vue": "2.0.0-beta.24",
